@@ -1,0 +1,20 @@
+namespace DependencyInversionPrinciple.Avoid
+{
+    public class Subscription
+    {
+        private readonly PushChannel _pushChannel;
+        private readonly EmailChannel _emailChannel;
+
+        public Subscription()
+        {
+            _pushChannel = new PushChannel();
+            _emailChannel = new EmailChannel();
+        }
+
+        public void SendNotification()
+        {
+            _pushChannel.SendPushNotification();
+            _emailChannel.SendEmailNotification();
+        }
+    }
+}
