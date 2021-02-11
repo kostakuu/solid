@@ -5,10 +5,10 @@ namespace DependencyInversionPrinciple.Avoid
         private readonly PushChannel _pushChannel;
         private readonly EmailChannel _emailChannel;
 
-        public Subscription()
+        public Subscription(PushChannel pushChannel, EmailChannel emailChannel)
         {
-            _pushChannel = new PushChannel();
-            _emailChannel = new EmailChannel();
+            _pushChannel = pushChannel;
+            _emailChannel = emailChannel;
         }
 
         public void SendNotification()

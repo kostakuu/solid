@@ -9,7 +9,7 @@ namespace DependencyInversionPrinciple.Implement
 
         public Subscription(IEnumerable<IChannel> channels)
         {
-            this._channels = channels;
+            _channels = channels;
         }
 
         public void SendNotifications()
